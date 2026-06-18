@@ -1,0 +1,52 @@
+/* Google Fonts üzerinden Script Font desteği (Yedek için) */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* 3D Uzay Derinliği */
+body {
+    perspective: 1500px;
+    background-color: #000; /* Tam siyah arka plan */
+}
+
+/* Enes Hairstyle Özel Font Ayarı */
+.logo-font {
+    font-family: 'Beckham Script Pro', 'Great Vibes', cursive;
+}
+
+/* 3D Süzülme ve Dönüş Animasyonları */
+@keyframes float-3d {
+    0% { transform: translateY(0px) rotateX(15deg) rotateY(-15deg) translateZ(0px); }
+    50% { transform: translateY(-50px) rotateX(-5deg) rotateY(25deg) translateZ(80px); }
+    100% { transform: translateY(0px) rotateX(15deg) rotateY(-15deg) translateZ(0px); }
+}
+
+@keyframes float-3d-alt {
+    0% { transform: translateY(0px) rotateX(-15deg) rotateY(15deg) translateZ(20px); }
+    50% { transform: translateY(-40px) rotateX(10deg) rotateY(-20deg) translateZ(100px); }
+    100% { transform: translateY(0px) rotateX(-15deg) rotateY(15deg) translateZ(20px); }
+}
+
+/* Karanlık Temaya Uygun Cam (Dark Glassmorphism) Tasarımı */
+.glass-orb {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+/* 10 Farklı Obje İçin Animasyon Süreleri */
+.anim-float-1 { animation: float-3d 9s ease-in-out infinite; }
+.anim-float-2 { animation: float-3d-alt 12s ease-in-out infinite; }
+.anim-float-3 { animation: float-3d 10s ease-in-out infinite reverse; }
+.anim-float-4 { animation: float-3d-alt 14s ease-in-out infinite reverse; }
+.anim-float-5 { animation: float-3d 11s ease-in-out infinite; }
+.anim-float-6 { animation: float-3d-alt 13s ease-in-out infinite reverse; }
+.anim-float-7 { animation: float-3d 15s ease-in-out infinite; }
+.anim-float-8 { animation: float-3d-alt 16s ease-in-out infinite reverse; }
+.anim-float-9 { animation: float-3d 8s ease-in-out infinite; }
+.anim-float-10 { animation: float-3d-alt 17s ease-in-out infinite; }
