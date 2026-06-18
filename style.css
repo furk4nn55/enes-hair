@@ -1,10 +1,11 @@
-/* Google Fonts üzerinden Script Font desteği (Yedek için) */
+/* Google Fonts üzerinden Script Font desteği */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* 3D Uzay Derinliği */
 body {
     perspective: 1500px;
     background-color: #000; /* Tam siyah arka plan */
+    overflow-x: hidden; /* Yatay kaydırmayı tamamen engeller */
 }
 
 /* Enes Hairstyle Özel Font Ayarı */
@@ -15,28 +16,42 @@ body {
 /* 3D Süzülme ve Dönüş Animasyonları */
 @keyframes float-3d {
     0% { transform: translateY(0px) rotateX(15deg) rotateY(-15deg) translateZ(0px); }
-    50% { transform: translateY(-50px) rotateX(-5deg) rotateY(25deg) translateZ(80px); }
+    50% { transform: translateY(-30px) rotateX(-5deg) rotateY(25deg) translateZ(40px); }
     100% { transform: translateY(0px) rotateX(15deg) rotateY(-15deg) translateZ(0px); }
 }
 
 @keyframes float-3d-alt {
-    0% { transform: translateY(0px) rotateX(-15deg) rotateY(15deg) translateZ(20px); }
-    50% { transform: translateY(-40px) rotateX(10deg) rotateY(-20deg) translateZ(100px); }
-    100% { transform: translateY(0px) rotateX(-15deg) rotateY(15deg) translateZ(20px); }
+    0% { transform: translateY(0px) rotateX(-15deg) rotateY(15deg) translateZ(10px); }
+    50% { transform: translateY(-25px) rotateX(10deg) rotateY(-20deg) translateZ(50px); }
+    100% { transform: translateY(0px) rotateX(-15deg) rotateY(15deg) translateZ(10px); }
 }
 
 /* Karanlık Temaya Uygun Cam (Dark Glassmorphism) Tasarımı */
 .glass-orb {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transform-style: preserve-3d;
+    max-width: 90vw; /* Mobilde ekrandan taşmayı önler */
+}
+
+/* Mobil Ekranlar İçin Küre Boyutlarını ve Görünürlüğünü Optimize Et */
+@media (max-width: 768px) {
+    .glass-orb {
+        width: 100px !important;
+        height: 100px !important;
+        opacity: 0.4 !important; /* Mobilde dikkati dağıtmaması için daha şeffaf */
+    }
+    .glass-orb svg {
+        width: 40px !important;
+        height: 40px !important;
+    }
 }
 
 /* 10 Farklı Obje İçin Animasyon Süreleri */
